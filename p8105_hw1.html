@@ -725,9 +725,13 @@ library(tidyverse)</code></pre>
 dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib,
 time_hour.</h6>
 </div>
-<div id="there-are-many-missing-data-under-the-varibales-wind_gust-and-pressure." class="section level6">
-<h6>There are many missing data under the varibales wind_gust and
+<div id="there-are-a-lot-of-missing-data-under-the-varibales-wind_gust-and-pressure." class="section level6">
+<h6>There are a lot of missing data under the varibales wind_gust and
 pressure.</h6>
+</div>
+<div id="from-the-scatterplot-the-temperature-is-increasing-over-time-but-the-humidity-varys." class="section level6">
+<h6>From the scatterplot, the temperature is increasing over time, but
+the humidity varys.</h6>
 </div>
 </div>
 </div>
@@ -742,10 +746,10 @@ pressure.</h6>
 
 mean_random_sample &lt;- pull(df, random_sample)
 mean(mean_random_sample)</code></pre>
-<pre><code>## [1] -0.4978546</code></pre>
+<pre><code>## [1] 0.003293705</code></pre>
 <pre class="r"><code>mean_vec_logical &lt;- pull(df, vec_logical)
 mean(mean_vec_logical)</code></pre>
-<pre><code>## [1] 0.4</code></pre>
+<pre><code>## [1] 0.7</code></pre>
 <div id="the-mean-of-random-sample-and-logical-vector-works-but-the-mean-of-character-vector-cannot-be-taken-since-they-are-not-numerical-values." class="section level6">
 <h6>The mean of random sample and logical vector works, but the mean of
 character vector cannot be taken since they are not numerical

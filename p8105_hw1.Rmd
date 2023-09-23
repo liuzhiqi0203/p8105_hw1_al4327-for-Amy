@@ -41,7 +41,8 @@ ggsave("scatter_plot.pdf")
 ###### In the early_january_weather dataset, there are 385 observations and 15 variables. 
 ###### The mean temperature is 39.58 
 ###### The name of the variables are: origin, year month, day, hour, temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib, time_hour. 
-###### There are many missing data under the varibales wind_gust and pressure. 
+###### There are a lot of missing data under the varibales wind_gust and pressure. 
+###### From the scatterplot, the temperature is increasing over time, but the humidity varys. 
 
 # Problem 2
 ```{r}
