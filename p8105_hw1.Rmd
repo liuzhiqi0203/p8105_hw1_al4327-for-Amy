@@ -1,6 +1,6 @@
 ---
 title: "hw1"
-output: html_document
+output: github_document
 date: "2023-09-22"
 ---
 
@@ -46,18 +46,38 @@ ggsave("scatter_plot.pdf")
 
 # Problem 2
 ```{r}
-df <- tibble(
-  random_sample = rnorm(10), 
-  vec_logical = random_sample > 0,
+library(tidyverse)
+
+df = tibble(
+  vec_numeric = rnorm(10), 
+  vec_logical = vec_numeric > 0,
   vec_char = c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"), 
-  vec_factor = factor(c( "high", "low", "medium", "medium", "high", "low", "high", "low", "low", "medium"))
+  vec_factor = factor(c( "large", "small", "medium", "medium", "large", "small", "large", "small", "small", "medium"))
 )
 
-mean_random_sample <- pull(df, random_sample)
-mean(mean_random_sample)
+mean_vec_numeric <- pull(df, vec_numeric)
+mean(mean_vec_numeric)
 
 mean_vec_logical <- pull(df, vec_logical)
 mean(mean_vec_logical)
 
 ```
-###### The mean of random sample and logical vector works, but the mean of character vector cannot be taken since they are not numerical values. 
+###### The mean of random sample and logical vector works, but the mean of character vector cannot be taken. The variables for vec_char and vec_factor are character values. We can only calculate the mean for numerical values.
+
+```{r, eval=FALSE}
+rv <- c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
+rf <- factor(rv)
+x <- as.numeric(rf)
+x
+```
+
+
+```{r, eval=FALSE}
+
+vec_logical <- c("large", "small", "medium", "medium", "large", "small", "large", "small", "small", "medium")
+vec_num <- as.numeric(vec_logical)
+vec_logical
+
+```
+
+##### The as.numeric function converts a character vector into a numeric vector.
